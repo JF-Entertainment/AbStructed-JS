@@ -16,14 +16,26 @@ var Game = Class.$extend({
 		
 		//Game-Loop
 		var last = new Date();
-		var GameClone = this;
-		setInterval( function() {
-			//No interval -> as fast as browser is able to update
+		var self = this;
+		var LoopFunction = function() {
 			var now = new Date();
-			GameClone.Tick( (now - last) / 1000 );
+			self.Tick( (now - last) / 1000 );
 			last = now;
-		});
+		};
+		var animFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || null ;
+		if ( animFrame !== null ) {
+        	var recursiveAnim = function() {
+            	LoopFunction();
+            	animFrame( recursiveAnim );
+        	};
+            animFrame( recursiveAnim );
+			
+        } else {
+           	var ONE_FRAME_TIME = 1000.0 / 60.0 ; //60fps
+            setInterval( LoopFunction(), ONE_FRAME_TIME );
+        }		
 		
+		//Load
 		this.Load();
 		
 	},

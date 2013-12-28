@@ -1,4 +1,9 @@
-*//
+/*  AbStructed | HTML5-Game Engine/Framework
+ * 	(c) 2013   
+ *
+ *  AbStructed is freely distributable under the terms of an MIT-style license.
+ */
+ 
 
 ns("Core").Game = Class.create({
 	

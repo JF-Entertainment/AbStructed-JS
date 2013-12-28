@@ -1,7 +1,4 @@
-var TestGame = Game.$extend({
+var TestGame = Class.create( Core.Game, {
 	
-	__init__: function(Container){
-		this.$super(Container);
-	}
 
 });

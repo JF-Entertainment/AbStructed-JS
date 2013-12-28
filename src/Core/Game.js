@@ -1,6 +1,8 @@
-var Game = Class.$extend({
+*//
+
+ns("Core").Game = Class.create({
 	
-	__init__: function(Container) {
+	initialize: function(Container) {
 		
 		//Create canvas
 		this.Canvas = document.createElement('Canvas');

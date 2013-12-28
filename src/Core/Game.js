@@ -6,7 +6,7 @@
  *  ============================================================================
  */
  
-//NameSpace Core
+//Namespace Core
 ns("Core").Game = Class.create({
 	
 	initialize: function(Container) {

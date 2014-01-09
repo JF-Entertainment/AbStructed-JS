@@ -5,7 +5,7 @@
  *  AbStructed is free software released into public domain.
  *  ============================================================================
  */
- 
+var tests = 1;
 //Namespace Core
 ns("Core").Game = Class.create({
 	
@@ -27,8 +27,16 @@ ns("Core").Game = Class.create({
 		var last = new Date();
 		var self = this;
 		var LoopFunction = function() {
+			//Get current time
 			var now = new Date();
+			//Call Tick
 			self.Tick( (now - last) / 1000 );
+			//Call Draw
+			var NewGraphics = new Drawing.Graphics(self.Canvas.width, self.Canvas.height);
+			self.Draw( NewGraphics );
+			self.Context.clearRect(0,0,self.Context.width,self.Context.height);
+			self.Context = NewGraphics.MergeContext(self.Context);
+			//Update last-time
 			last = now;
 		};
 		var animFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || null ;
@@ -54,11 +62,11 @@ ns("Core").Game = Class.create({
 	},
 	
 	Tick: function(elapsed) {
-		console.log("test");
+
 	},
 	
 	Draw: function(e) {
-	
+
 	}
 
 });

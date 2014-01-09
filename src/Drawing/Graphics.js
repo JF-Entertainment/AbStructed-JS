@@ -4,8 +4,8 @@ ns("Drawing").Graphics = Class.create({
 	initialize: function(Width, Height) {
 		
 		//Public variables
-		this.Width = width;
-		this.Height = height;
+		this.Width = Width;
+		this.Height = Height;
 		
 		//Create canvas
 		this.Canvas = document.createElement('Canvas');

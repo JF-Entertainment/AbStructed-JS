@@ -15,6 +15,6 @@ ns("Drawing").Colors = {
 	Silver: 	new Drawing.Color(192, 192, 192, 1),
 	Teal: 		new Drawing.Color(0, 128, 128, 1),	
 	White: 		new Drawing.Color(255, 255, 255, 1),
-	Yellow: 	new Drawing.Color(255, 255, 1),
+	Yellow: 	new Drawing.Color(255, 255, 1, 1)
 	
 };

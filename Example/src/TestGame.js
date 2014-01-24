@@ -2,7 +2,8 @@ var TestGame = Class.create( Core.Game, {
 	
 	//Override Draw
 	Draw: function(e) {
-		e.DrawRectangle( Drawing.Colors.Purple, 20, new Geometry.Rectangle(40,80,600,200) );
+		e.DrawLine( Drawing.Colors.Yellow, 100, {X: 20, Y: 600}, {X: 500, Y: 700});
+		e.FillPolygon( Drawing.Colors.Yellow, [ {X: 25, Y: 25}, {X: 105, Y: 25}, {X: 25, Y: 105} ]);
 	}
 	
 });

@@ -33,7 +33,6 @@ ns("Drawing").Graphics = Class.create({
 	
 	},
 	
-	//Draws a border of the rectangle
 	DrawRectangle: function(Color, LineWidth, Rectangle) {
 		
 		//Strokestyle
@@ -46,19 +45,62 @@ ns("Drawing").Graphics = Class.create({
 	},
 	
 	FillRectangle: function(Color, Rectangle) {
-	
+		
+		//Strokestyle
+		this.Context.fillStyle = Color.toString();
+		//Draw
+		this.Context.fillRect(Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
+		
 	},
 	
-	DrawLine: function(Color, Size, Vector1, Vector2) {
-	
+	DrawLine: function(Color, LineWidth, Vector1, Vector2) {
+		
+		//Strokestyle
+		this.Context.strokeStyle = Color.toString();
+		//Size
+		this.Context.lineWidth = LineWidth;
+		//Draw
+		this.Context.beginPath();
+		this.Context.moveTo(Vector1.X, Vector1.Y);
+		this.Context.lineTo(Vector2.X, Vector2.Y);
+		this.Context.closePath();
+		this.Context.stroke();
+		
 	},
 	
-	DrawPolygon: function(Color, Size, VectorArray) {
-	
+	DrawPolygon: function(Color, LineWidth, VectorArray) {
+		
+		//Strokestyle
+		this.Context.strokeStyle = Color.toString();
+		//Size
+		this.Context.lineWidth = LineWidth;
+		//Draw
+		this.Context.beginPath();
+		this.Context.moveTo(VectorArray[0].X, VectorArray[0].Y);
+		
+		for (var i = 1; i < VectorArray.length; i++) {
+    		this.Context.lineTo(VectorArray[i].X, VectorArray[i].Y);
+		}
+		
+		this.Context.closePath();
+		this.Context.stroke();
+		
 	},
 	
 	FillPolygon: function(Color, VectorArray) {
-	
+		
+		//Strokestyle
+		this.Context.fillStyle = Color.toString();
+		//Draw
+		this.Context.beginPath();
+		this.Context.moveTo(VectorArray[0].X, VectorArray[0].Y);
+		
+		for (var i = 1; i < VectorArray.length; i++) {
+    		this.Context.lineTo(VectorArray[i].X, VectorArray[i].Y);
+		}
+		
+		this.Context.closePath();
+		this.Context.fill();
 	},
 	
 	DrawString: function(Text, Color, Font, Position ) {

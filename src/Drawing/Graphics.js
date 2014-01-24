@@ -33,8 +33,16 @@ ns("Drawing").Graphics = Class.create({
 	
 	},
 	
-	DrawRectangle: function(Color, Size, Rectangle) {
-	
+	//Draws a border of the rectangle
+	DrawRectangle: function(Color, LineWidth, Rectangle) {
+		
+		//Strokestyle
+		this.Context.strokeStyle = Color.toString();
+		//Size
+		this.Context.lineWidth = LineWidth;
+		//Draw
+		this.Context.strokeRect(Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
+		
 	},
 	
 	FillRectangle: function(Color, Rectangle) {

@@ -1,5 +1,5 @@
 
-ns("Math").Rectangle = Class.create({
+ns("Geometry").Rectangle = Class.create({
 
 	initialize: function(X, Y, Width, Height) {
 		

@@ -103,12 +103,27 @@ ns("Drawing").Graphics = Class.create({
 		this.Context.fill();
 	},
 	
-	DrawString: function(Text, Color, Font, Position ) {
-	
+	DrawText: function(Text, Color, Font, Position ) {
+		
+		//Font
+		this.Context.font = Font.toString();
+        //Color
+        this.Context.fillStyle = Color.toString();
+		//Draw
+        this.Context.fillText(Text, Position.X, Position.Y);
+		
 	},
 	
-	MeasureString: function( Text, Font) {
-	
+	MeasureText: function( Text, Font) {
+		
+		//Font
+		this.Context.font = Font.toString();
+		
+		var Size = new Geometry.Vector2();
+        Size.X = this.Context.measureText(Text).width;
+		Size.Y = Font.Size;
+		
+		return Size;
 	}
 	
 	

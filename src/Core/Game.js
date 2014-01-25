@@ -5,7 +5,6 @@
  *  AbStructed is free software released into public domain.
  *  ============================================================================
  */
-var tests = 1;
 //Namespace Core
 ns("Core").Game = Class.create({
 	

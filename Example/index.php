@@ -9,17 +9,12 @@
 		<!-- Includes -->
 		<script type="text/javascript" src="Libraries/prototype.js"></script>
 		
+		
+		<!-- Compress javascript -->
+		<?php include("../Make.php"); ?>
+		
 		<!-- AbStructed Includes -->
-		<script type="text/javascript" src="../src/Core/General.js"></script>
-		<script type="text/javascript" src="../src/Core/Game.js"></script>
-		
-			<!-- Drawing -->
-		<script type="text/javascript" src="../src/Drawing/Graphics.js"></script>
-		<script type="text/javascript" src="../src/Drawing/Color.js"></script>
-		<script type="text/javascript" src="../src/Drawing/Colors.js"></script>
-		
-			<!-- Geometry -->
-		<script type="text/javascript" src="../src/Geometry/Rectangle.js"></script>
+		<script type="text/javascript" src="../AbStructed-min.js"></script>
 		
 		<!-- TestGame Include -->
 		<script type="text/javascript" src="src/TestGame.js"></script>

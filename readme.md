@@ -4,7 +4,7 @@ AbStrctued
 A HTML5/Canvas gameengine for larger projects. It features:
 
   - Conventional class-system using class.js
-  - **E**ntity**C**omponent**S**ystem
+  - **E** ntity **C** omponent **S** ystem
   - Many things to help you coding efficient and enduring
 
 

@@ -1,4 +1,4 @@
-AbStrctued
+AbStructed
 =========
 
 A HTML5/Canvas gameengine for larger projects. It features:

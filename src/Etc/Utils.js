@@ -39,3 +39,9 @@ Align = {
 	Right: 2,
 	Left: 3	
 };
+
+Matrix = {
+	X: 0,
+	Y: 1,
+	Z: 2
+};

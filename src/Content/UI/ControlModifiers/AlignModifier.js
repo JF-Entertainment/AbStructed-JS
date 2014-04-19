@@ -18,8 +18,8 @@ define( [ "Engine/Content/UI/ControlModifiers/ControlModifier" ] ,function(Contr
 				break;
 			  case Align.Bottom:
 					
-				Control.Y = Control.Parent.Height - Control.Height - this.Value;
-					
+				Control.Y = Control.Parent.Height - Control.Height - this.Value;	
+
 					
 				break;
 			  case Align.Right:

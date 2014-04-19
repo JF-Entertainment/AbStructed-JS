@@ -12,20 +12,10 @@ define( ["Engine/Content/Views/View"] , function( View) {
 			
 			
 		},
-		
-		Layout: function() {
-			
-			var self = this;
-			
-			this.Modifiers.forEach(function(Modifier){
-				Modifier.Apply(self);
-			});
-			
-		},
-		
+
 		Draw: function(e) {
 			e.fillStyle = "blue";
-			e.fillRect(this.X,this.Y,this.Width,this.Height);
+			e.fillRect(0, 0,this.Width,this.Height);
 		}
 		
     });

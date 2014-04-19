@@ -1,6 +1,6 @@
 define( function() {
 
-    
+
     var Vector2 = Class.extend({
         
 		initialize: function(X, Y) {
@@ -10,20 +10,23 @@ define( function() {
 			
 		},
 		
+
 		Add: function(v) {		
 			this.X += v.X;
 			this.Y += v.Y;
 			
 			return this;
 		},
-		
+
+
 		Substract: function(v) {
 			this.X -= v.X;
 			this.Y -= v.Y;
 			
 			return this;
 		},
-		 
+		
+ 
 		Multiply: function(v) {
 			this.X *= v.X;
 			this.Y *= v.Y;
@@ -31,6 +34,7 @@ define( function() {
 			return this;
 		},
 		
+	
 		Divide: function(v) {
 			this.X /= v.X;
 			this.Y /= v.Y;

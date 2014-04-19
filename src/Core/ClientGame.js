@@ -1,15 +1,14 @@
 define( ["Engine/Etc/Utils", "Engine/Content/Views/View"] , function(Utils, View) {
-
     
     var ClientGame = View.extend({
     
-        initialize: function(Element) {
+        initialize: function(Element, StartView, Config) {
            
             //Initialize super
             this._super(0,0,0,0);
             
-			//pseudo-parentclass
-			this.Parent = {X: 0, Y: 0};
+			//Config
+			this.Config = Config;
 			
             //Reading attributes
             this.Width = Element.width;
@@ -17,6 +16,13 @@ define( ["Engine/Etc/Utils", "Engine/Content/Views/View"] , function(Utils, View
             this.Canvas = Element;
             this.Context = Element.getContext("2d");
             
+			//Pseudoparent
+			this.Parent = {X:0, Y:0, Width: this.Width, Height: this.Height};
+			this.Game = this;
+			
+			//onResize
+			window.addEventListener('resize', this.onResize.bind(this) );
+			
             //GameLoop
 			var last = new Date();
 			var self = this;
@@ -45,6 +51,9 @@ define( ["Engine/Etc/Utils", "Engine/Content/Views/View"] , function(Utils, View
 
             
             
+			//Show startview and layout it
+			this.addView(StartView);
+			this.onResize();
             
         },
         
@@ -55,11 +64,25 @@ define( ["Engine/Etc/Utils", "Engine/Content/Views/View"] , function(Utils, View
 			
             e.fillStyle = "white";
             e.fillRect(0, 0, this.Width, this.Height);
-            
+			
             //Call super
             this._super(e);
                
-        }
+        },
+		
+		onResize: function() {
+
+			if (this.Config.FullScreen) {
+				this.Parent.Width = window.innerWidth;
+				this.Parent.Height = window.innerHeight;
+			}
+			
+			//Set pseudo-parent
+			this.Canvas.width = this.Parent.Width;
+			this.Canvas.height = this.Parent.Height;
+			
+			this._super();
+		}
         
     });
     

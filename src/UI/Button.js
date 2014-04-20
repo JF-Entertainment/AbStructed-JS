@@ -1,14 +1,19 @@
-define( ["Engine/Content/UI/Control"] , function(Control) {
+define( ["Engine/UI/Control", "Engine/Input/MouseInput"] , function(Control, MouseInput) {
 
     
     var Button = Control.extend({
         
+		
+		Load: function() {
+			
+			this.MouseInput = new MouseInput(this);
+			
+		},
+	
 		Draw: function(e) {
 			e.fillStyle = "green";
 			e.fillRect(0, 0,this.Width,this.Height);
 			
-			e.fillStyle = "black";
-			e.fillText("AbsoluteY: " + this.AbsoluteY, 0,0);
 		}
 		
     });

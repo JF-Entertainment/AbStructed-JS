@@ -1,4 +1,4 @@
-define( ["Engine/Content/Views/View"] , function( View) {
+define( ["Engine/Views/View"] , function( View) {
 
     
     var Control = View.extend({
@@ -8,8 +8,6 @@ define( ["Engine/Content/Views/View"] , function( View) {
 			
 			//Align properties
 			this.Modifiers = Modifiers;
-			
-			
 			
 		},
 

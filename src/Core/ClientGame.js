@@ -1,4 +1,4 @@
-define( ["Engine/Etc/Utils", "Engine/Content/Views/View"] , function(Utils, View) {
+define( ["Engine/Etc/Utils", "Engine/Views/View"] , function(Utils, View) {
     
     var ClientGame = View.extend({
     

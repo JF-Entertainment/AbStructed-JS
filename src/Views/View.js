@@ -1,4 +1,4 @@
-define( ["Engine/Content/UI/ControlModifiers/RelativeSizeModifier"], function( RelativeSizeModifier ) {
+define( ["Engine/UI/ControlModifiers/RelativeSizeModifier"], function( RelativeSizeModifier ) {
 
     
     var View = Class.extend({
@@ -23,7 +23,11 @@ define( ["Engine/Content/UI/ControlModifiers/RelativeSizeModifier"], function( R
 			this.Modifiers = [ new RelativeSizeModifier(1, 1) ];
 			
         },
-        
+		
+		Load: function() {
+		
+		},
+		
         Tick: function(elapsed) {
             
 			//Calculate absolute position
@@ -67,6 +71,8 @@ define( ["Engine/Content/UI/ControlModifiers/RelativeSizeModifier"], function( R
 			//Link parent-property to self
 			NewView.Parent = this;
 			NewView.Game = this.Game;
+			NewView.Load();
+			
             //Add View to array
             this.Views.push(NewView);
         },

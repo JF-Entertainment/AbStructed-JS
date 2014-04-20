@@ -45,3 +45,10 @@ Matrix = {
 	Y: 1,
 	Z: 2
 };
+
+MouseButton = {
+	None: 0,
+	Left: 1,
+	Right: 2,
+	Middle: 3
+};

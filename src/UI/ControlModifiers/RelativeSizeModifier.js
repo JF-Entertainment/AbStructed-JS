@@ -1,4 +1,4 @@
-define( [ "Engine/Content/UI/ControlModifiers/ControlModifier" ] ,function(ControlModifier) {
+define( [ "Engine/UI/ControlModifiers/ControlModifier" ] ,function(ControlModifier) {
 
 	
     var RelativeSizeModifier = ControlModifier.extend({

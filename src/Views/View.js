@@ -33,7 +33,6 @@ define( ["Engine/UI/ControlModifiers/RelativeSizeModifier"], function( RelativeS
 			//Calculate absolute position
 			this.AbsoluteX = this.Parent.X + this.X;
 			this.AbsoluteY = this.Parent.Y + this.Y;
-
 			
 			//Goes through all Views and removes those, who have been flagged Killed.
             for (var i=0; i < this.Views.length; i++){

@@ -24,12 +24,12 @@ define( ["Engine/Input/Input"], function(Input) {
 			//Set X and Y
 			this.X = event.clientX - this.View.AbsoluteX;
 			this.Y = event.clientY - this.View.AbsoluteY;
-			
+
 		},
 		
 		onMouseDown: function(event) {
 			this.isPressed = true;
-			
+
 			if (event.button == 0) this.Button = MouseButton.Left;
 			if (event.button == 1) this.Button = MouseButton.Middle;
 			if (event.button == 2) this.Button = MouseButton.Right;

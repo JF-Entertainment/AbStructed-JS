@@ -5,7 +5,7 @@ define( function() {
         
 		Name: "",
 		
-		intialize: function() {
+		initialize: function() {
 
 		}
         

@@ -12,7 +12,7 @@ define( ["Engine/Views/View"] , function( View) {
 		},
 
 		Draw: function(e) {
-			e.fillStyle = "blue";
+			e.fillStyle = "red";
 			e.fillRect(0, 0,this.Width,this.Height);
 		}
 		

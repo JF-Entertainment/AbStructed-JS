@@ -12,11 +12,13 @@ define( [ "Engine/UI/ControlModifiers/ControlModifier" ] ,function(ControlModifi
 			
 			var Value = this.Value;
 			if (Value < 1) {
+				
 				//Vertical
 				if( (this.Align == Align.Top) || (this.Align == Align.Bottom) ) Value = Control.Parent.Height * Value;
 				
 				//Horizontal
 				if( (this.Align == Align.Right) || (this.Align == Align.Left) ) Value = Control.Parent.Width * Value;
+			
 			}
 			
 			switch (this.Align) {
@@ -27,13 +29,13 @@ define( [ "Engine/UI/ControlModifiers/ControlModifier" ] ,function(ControlModifi
 				break;
 			  case Align.Bottom:
 					
-				Control.Y = Control.Parent.Height - Control.Height - Value;	
+				Control.Height = Control.Parent.Height - Value - Control.Y;
 
 					
 				break;
 			  case Align.Right:
 					
-				Control.X = Control.Parent.Width - Control.Width - Value;	
+				Control.Width = Control.Parent.Width - Value - Control.X;		
 					
 				break;
 			  case Align.Left:

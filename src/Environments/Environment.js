@@ -5,7 +5,7 @@ define( function() {
         
 		initialize: function() {
 			this.Systems = new Array();
-			this.Containers = new Array();
+			this.Entities = new Array();
 		},
 		
 		addSystem: function(NewSystem) {
@@ -15,24 +15,19 @@ define( function() {
 			this.Systems.push(NewSystem);
 		},
 		
-		addContainer: function(NewContainer) {
-			this.Containers.push(NewContainer);
+		addEntity: function(NewEntity) {
+			this.Entities.push(NewEntity);
 		},
 		
-		getContainers: function(Names) {
-			var Result = new Array();
+		getEntities: function(ComponentQuery) {
 			
-			//Go trough containers
-			for (var i=0; i < this.Containers.length; i++){
-				var containseverything = true;
-				//Go trough
-				for (var y=0; y < Names; y++){
-					//If componnets do not have name -> dont add
-					if (this.Containers[i].Components.indexOf( Names[y] ) < 0) containseverything = false;
-				}
+			var Result = new Array();
+			//Go trough entities
+			this.Entities.forEach(function(Entity){
 				
-				if (containseverything) Result.push(this.Containers[i]);
-			}
+				if (Entity.Has(ComponentQuery)) Result.push(Entity);
+				
+			});
 			
 			return Result;
 		},

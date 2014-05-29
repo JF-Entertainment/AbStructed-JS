@@ -11,7 +11,7 @@ define( function() {
 			
 		},
 		
-		isColliding: function(Structure2) {
+		isColliding: function(Structure2, oldthis) {
 		
 		}
         

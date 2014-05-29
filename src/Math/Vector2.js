@@ -40,6 +40,11 @@ define( function() {
 			this.Y /= v.Y;
 			
 			return this;
+		},
+		
+		Equals: function(v) {
+			
+			return (v.X == this.X && v.Y == this.Y);	
 		}
         
     });

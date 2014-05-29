@@ -52,3 +52,8 @@ MouseButton = {
 	Right: 2,
 	Middle: 3
 };
+
+Body = {
+	Static: 0,
+	Dynamic: 1
+};

@@ -7,12 +7,8 @@ define( function() {
 			this.Environment = null;
 		},
 		
-		Tick: function(elapsed) {
-		
-		},
-		
-		Draw: function(e) {
-		
+		Load: function() {
+			
 		}
 
         

@@ -36,6 +36,7 @@ define( ["Engine/IO/Resource"] , function(Resource) {
 				if (this.sHeight == 0) this.sHeight = this.Data.height;
 				
 				//Callbacks
+				this.Loaded = true;
 				this.onLoaded();
 				Callback();
 				

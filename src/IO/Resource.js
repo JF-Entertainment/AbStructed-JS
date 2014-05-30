@@ -14,7 +14,7 @@ define( function() {
 		},
 		
 		onLoaded: function() {
-			this.Loaded = true;
+			
 		}
         
     });

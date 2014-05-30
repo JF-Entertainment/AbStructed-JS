@@ -11,35 +11,23 @@ define( function() {
 		},
 		
 
-		Add: function(v) {		
-			this.X += v.X;
-			this.Y += v.Y;
-			
-			return this;
+		Add: function(v) {			
+			return new Vector2(this.X + v.X, this.Y + v.Y);
 		},
 
 
 		Substract: function(v) {
-			this.X -= v.X;
-			this.Y -= v.Y;
-			
-			return this;
+			return new Vector2(this.X - v.X, this.Y - v.Y);
 		},
 		
  
 		Multiply: function(v) {
-			this.X *= v.X;
-			this.Y *= v.Y;
-			
-			return this;
+			return new Vector2(this.X * v.X, this.Y * v.Y);
 		},
 		
 	
 		Divide: function(v) {
-			this.X /= v.X;
-			this.Y /= v.Y;
-			
-			return this;
+			return new Vector2(this.X / v.X, this.Y / v.Y);
 		},
 		
 		Equals: function(v) {

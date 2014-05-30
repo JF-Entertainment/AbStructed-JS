@@ -10,7 +10,7 @@ define( ["Engine/Math/Structure", "Engine/Math/Vector2"] , function(Structure, V
 			this.Size = Size;
 		},
 		
-		isColliding: function(Modifier1, Modifier2, Structure2, movedX, movedY) {
+		isColliding: function(Modifier1, Modifier2, Structure2) {
 			
 			
 			

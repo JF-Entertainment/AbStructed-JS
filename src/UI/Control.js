@@ -3,11 +3,9 @@ define( ["Engine/Views/View"] , function( View) {
     
     var Control = View.extend({
         
-		initialize: function(Width, Height, Modifiers) {
-			this._super(0, 0, Width, Height);
+		initialize: function(X, Y, Width, Height) {
+			this._super(X, Y, Width, Height);
 			
-			//Align properties
-			this.Modifiers = Modifiers;
 			
 		},
 

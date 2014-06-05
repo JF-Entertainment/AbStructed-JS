@@ -29,14 +29,14 @@ define( function() {
 			//Go trough entities
 			this.Entities.forEach(function(Entity){
 				
-				if (Entity.Has(ComponentQuery)) Result.push(Entity);
+				if (Entity.hasComponent(ComponentQuery)) Result.push(Entity);
 				
 			});
 			
 			return Result;
 		},
 		
-		addEvent: function(Name, Hook, Alias) {
+		hookEvent: function(Name, Hook, Alias) {
 				
 			//If event doesn't exists -> create 
 			if (!this.Events[Name]) this.Events[Name] = new Array();

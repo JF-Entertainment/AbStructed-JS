@@ -1,4 +1,4 @@
-define( ["Engine/UI/ControlModifiers/RelativeSizeModifier"], function( RelativeSizeModifier ) {
+define( function(){
 
 
     var View = Class.extend({
@@ -16,11 +16,6 @@ define( ["Engine/UI/ControlModifiers/RelativeSizeModifier"], function( RelativeS
 			this.AbsoluteY = 0;
 			this.Width = Width || 0;
 			this.Height = Height || 0;
-
-			//Size and Position Modfier
-			//NOTE: May conflict with new view-type
-			//Auto-Fullsize Mainviews
-			this.Modifiers = [ new RelativeSizeModifier(1, 1) ];
 
         },
 
@@ -81,11 +76,9 @@ define( ["Engine/UI/ControlModifiers/RelativeSizeModifier"], function( RelativeS
 		},
 
 		onResize: function() {
-
-			//Apply modfiers
-			this.Modifiers.forEach(function(Modifier){
-				Modifier.Apply(this);
-			}.bind(this));
+			
+			this.Width = this.Parent.Width;
+			this.Height = this.Parent.Height;
 
 			//Call Event on subviews
 			this.Views.forEach(function(View){

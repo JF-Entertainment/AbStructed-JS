@@ -11,7 +11,7 @@ define( function() {
 			this.State = State.Active;
 		},
 		
-		Add: function(NewComponent) {
+		addComponent: function(NewComponent) {
 			
 			
 			//Add new component to list
@@ -19,25 +19,17 @@ define( function() {
 			
 		},
 		
-		Get: function(Name) {
+		getComponent: function(Name) {
 			
 			//Search through array
 			return this.Components[Name];
 			
 		},
 		
-		Has: function(ComponentQuery) {
+		hasComponent: function(ComponentQuery) {
 			
-			
-			//Check for query
-			var Result = true;
-			ComponentQuery.forEach(function(ComponentName){
-				
-				if (!this.Components[ComponentName]) Result = false;
-				
-			}.bind(this));
-			
-			return Result;
+		
+			return !( this.Components[ComponentQuery] === undefined );
 		},
 		
 		Delete: function() {

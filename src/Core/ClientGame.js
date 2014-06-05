@@ -27,17 +27,18 @@ define( ["Engine/Etc/Utils", "Engine/Views/View"] , function(Utils, View) {
 			var last = new Date();
 			var self = this;
 			var LoopFunction = function() {
+			
 				//Get current time
-				var now = new Date();
-
+				var delta = new Date() - last;
+				last = new Date();
+				
 				//Call Tick
-				self.Tick( (now - last) / 1000 );
+				self.Tick( delta / 100 * 6.25 );
 				//Call Draw
 				self.Draw( self.Context );
-
-				//Update last-time
-				last = now;
+				
 			};
+
 			var animFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || null ;
 			if ( animFrame !== null ) {
 				var recursiveAnim = function() {
@@ -46,7 +47,7 @@ define( ["Engine/Etc/Utils", "Engine/Views/View"] , function(Utils, View) {
 				};
 					animFrame( recursiveAnim );    
 				} else {
-					setInterval( LoopFunction(), 1000.0 / 60.0 );
+					setInterval( LoopFunction, 1000.0 / 60.0 );
 				}		
 
             

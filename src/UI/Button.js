@@ -46,7 +46,7 @@ define( ["Engine/UI/Control", "Engine/Input/MouseInput"] , function(Control, Mou
 		},
 		
 		onClick: function() {
-
+			
 		}
 		
     });

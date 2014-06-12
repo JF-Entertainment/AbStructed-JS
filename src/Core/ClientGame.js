@@ -2,13 +2,13 @@ define( ["Engine/Etc/Utils", "Engine/Views/View"] , function(Utils, View) {
     
     var ClientGame = View.extend({
     
-        initialize: function(Element, StartView, Config) {
+        initialize: function(Element, StartView, Configuration) {
            
             //Initialize super
             this._super(0,0,0,0);
             
 			//Config
-			this.Config = Config;
+			this.Configuration = Configuration;
 			
             //Reading attributes
             this.Width = Element.width;
@@ -73,7 +73,7 @@ define( ["Engine/Etc/Utils", "Engine/Views/View"] , function(Utils, View) {
 		
 		onResize: function() {
 
-			if (this.Config.FullScreen) {
+			if (this.Configuration.Fullscreen) {
 				this.Parent.Width = window.innerWidth;
 				this.Parent.Height = window.innerHeight;
 			}

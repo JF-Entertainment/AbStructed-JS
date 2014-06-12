@@ -15,29 +15,33 @@ How to use
 After you cloned this repository, you can build your game on top of it in any folder of your computer. Your game's require.js-main-file should contain following.
 
 ```javascript
+// src/Apps.js
 requirejs.config({
+
+	
     paths: {
-        //This path points to the "src"-folder of AbStructed.
-        //I suggest to enter a relative path (releative to your main-file)
-        Engine: 'Path/To/AbStructed/src'
+        Engine: '../bower_components/AbStructed/src',
+		App: '.'
     }
 });
 
 
-//In this example we load the class-library of AbStructed, the ClientGame-Class
-//and our own "GameView"-Class, which is the first screen drawn to the canvas.
+define( ["Engine/Libraries/class" , "Engine/Core/ClientGame", "App/Views/MainMenuView"] , 
+	function( cl, ClientGame, MainMenuView) {
+    
+	
+		//## Load Game ##
+		var NewView = new MainMenuView();
 
-define( ["Engine/Libaries/class" , "Engine/Core/ClientGame", "GameView"] , function( cl, ClientGame, GameView) {
-    
-    
-    //Initializing Game by applying our Canvas' Element.
-    var Game = new ClientGame( document.getElementById("GameCanvas") );
-    
-	//Loading our own "GameView" and adding it to our screen
-	var NewView = new GameView();
-    Game.addView( NewView );
+		//Initializing Game 
+		var Game = new ClientGame( document.getElementById("GameCanvas"), NewView, {
+			Fullscreen: false
+		});
+
+
                     
-});
+	});
+
 ```
 
 

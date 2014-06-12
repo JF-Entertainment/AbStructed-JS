@@ -1,0 +1,27 @@
+{
+  "name": "AbStructed",
+  "version": "0.1",
+  "homepage": "https://github.com/JF-Entertainment/AbStructed",
+  "authors": [
+    "JF-Entertainment"
+  ],
+  "description": "A HTML5/Canvas gameengine for larger projects",
+  "main": "src/Core/ClientGame.js",
+  "keywords": [
+    "game",
+    "engine",
+    "canvas",
+    "html5",
+    "javascript",
+    "large",
+    "projects"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

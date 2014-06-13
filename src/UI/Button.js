@@ -1,6 +1,8 @@
-define( ["Engine/UI/Control", "Engine/Input/MouseInput"] , function(Control, MouseInput) {
+define(function(require) {
 
-    
+    var Control = require("Engine/UI/Control"),
+		MouseInput = require("Engine/Input/MouseInput");
+	
     var Button = Control.extend({
 		
 		Load: function() {

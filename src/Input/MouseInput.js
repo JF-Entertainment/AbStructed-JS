@@ -1,6 +1,9 @@
-define( ["Engine/Input/Input"], function(Input) {
-
-    
+define(function(require) {
+	
+	
+	var Input = require("Engine/Input/Input");
+	
+	
     var MouseInput = Input.extend({
         
 		

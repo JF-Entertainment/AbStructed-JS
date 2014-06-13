@@ -1,6 +1,7 @@
-define( ["Engine/Math/Structure"] , function(Structure) {
+define(function(require) {
 
-    
+    var Structure = require("Engine/Math/Structure");
+	
     var Circle = Structure.extend({
         
 		Name: "Circle",

@@ -1,5 +1,8 @@
-define( ["Engine/Etc/Utils", "Engine/Views/View"] , function(Utils, View) {
+define(function(require) {
     
+	var Utils = require("Engine/Etc/Utils"),
+		View = require("Engine/Views/View");
+	
     var ClientGame = View.extend({
     
         initialize: function(Element, StartView, Configuration) {

@@ -1,5 +1,6 @@
-define( ["Engine/IO/Resource"] , function(Resource) {
-
+define(function(require) {
+	
+	var Resource = require("Engine/IO/Resource");
     
     var Bitmap = Resource.extend({
    

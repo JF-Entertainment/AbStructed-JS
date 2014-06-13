@@ -1,5 +1,7 @@
-define( ["Engine/Math/Structure", "Engine/Math/Vector2"] , function(Structure, Vector2) {
+define(function(require) {
 
+    var Structure = require("Engine/Math/Structure"),
+		Vector = require("Engine/Math/Vector2");
     
     var Rectangle = Structure.extend({
         

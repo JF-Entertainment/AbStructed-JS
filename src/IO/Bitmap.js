@@ -37,17 +37,20 @@ define(function(require) {
 				if (this.sHeight == 0) this.sHeight = this.Data.height;
 				
 				//Callbacks
+				Callback();
 				this.Loaded = true;
 				this.onLoaded();
-				Callback();
-				
+
 			}.bind(this);
+			
+			
 			
 			//Load from path	
 			this.Data.src = Path;
 		
-			
 		}
+		
+
         
     });
     

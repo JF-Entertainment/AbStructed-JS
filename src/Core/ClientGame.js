@@ -1,7 +1,8 @@
 define(function(require) {
     
 	var Utils = require("Engine/Etc/Utils"),
-		View = require("Engine/Views/View");
+		View = require("Engine/Views/View"),
+		ResourceManager = require("Engine/IO/ResourceManager");
 	
     var ClientGame = View.extend({
     
@@ -19,6 +20,9 @@ define(function(require) {
             this.Canvas = Element;
             this.Context = Element.getContext("2d");
             
+			//Resource
+			this.ResourceManager = new ResourceManager();
+			
 			//Pseudoparent
 			this.Parent = {X:0, Y:0, Width: this.Width, Height: this.Height};
 			this.Game = this;
@@ -52,8 +56,8 @@ define(function(require) {
 				} else {
 					setInterval( LoopFunction, 1000.0 / 60.0 );
 				}		
-
-            
+			
+			
             
 			//Show startview and layout it
 			this.addView(StartView);

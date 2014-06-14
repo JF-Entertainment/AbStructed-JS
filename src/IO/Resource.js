@@ -6,7 +6,7 @@ define( function() {
 		initialize: function() {
 			
 			this.Loaded = false;
-			
+			this.Progress = 0;
 		},
 		
 		Load: function(Path, Callback) {

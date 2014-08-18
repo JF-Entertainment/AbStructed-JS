@@ -4,9 +4,9 @@ define(function(require) {
 		View = require("Engine/Views/View"),
 		ResourceManager = require("Engine/IO/ResourceManager");
 	
-    var ClientGame = View.extend({
+    var Client = View.extend({
     
-        initialize: function(Element, StartView, Configuration) {
+        initialize: function(Element, Configuration) {
            
             //Initialize super
             this._super(0,0,0,0);
@@ -19,6 +19,8 @@ define(function(require) {
             this.Height = Element.height;
             this.Canvas = Element;
             this.Context = Element.getContext("2d");
+            this.Context.imageSmoothingEnabled = false;
+            
             
 			//Resource
 			this.ResourceManager = new ResourceManager();
@@ -57,11 +59,7 @@ define(function(require) {
 					setInterval( LoopFunction, 1000.0 / 60.0 );
 				}		
 			
-			
-            
-			//Show startview and layout it
-			this.addView(StartView);
-			this.onResize();
+
             
         },
         
@@ -89,12 +87,13 @@ define(function(require) {
 			this.Canvas.width = this.Parent.Width;
 			this.Canvas.height = this.Parent.Height;
 			
-			this._super();
+            //Calculate ratio           
+			this._super(this.Height / 700);
 		}
         
     });
     
     
     
-    return ClientGame;
+    return Client;
 });

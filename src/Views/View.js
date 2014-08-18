@@ -4,7 +4,7 @@ define( function(){
     var View = Class.extend({
 
         initialize: function(X, Y, Width, Height) {
-            this.Views = new Array();
+            this.Views = [];
 			this.State = State.Active;
 
 		    this.Parent = null;
@@ -65,24 +65,33 @@ define( function(){
 			//Link parent-property to self
 			NewView.Parent = this;
 			NewView.Game = this.Game;
-			NewView.Load();
+			NewView.Load(this.Game.ResoureManager);
 
             //Add View to array
             this.Views.push(NewView);
-        },
+            
+            //Update relations
+            this.onResize();
 
+        },
+        
+        setView: function(NewView) {
+            this.Views = [];
+            this.addView(NewView);           
+        },
+        
 		Delete: function() {
 			this.State = State.Killed;
 		},
 
-		onResize: function() {
+		onResize: function(ratio) {
 			
 			this.Width = this.Parent.Width;
 			this.Height = this.Parent.Height;
 
 			//Call Event on subviews
 			this.Views.forEach(function(View){
-				View.onResize();
+				View.onResize(ratio);
 			});
 
 		}

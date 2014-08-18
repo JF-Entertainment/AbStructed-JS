@@ -33,7 +33,11 @@ define( function() {
 		Equals: function(v) {
 			
 			return (v.X == this.X && v.Y == this.Y);	
-		}
+		},
+        
+        getDistance: function(v) {
+            return Math.sqrt(Math.pow(this.X - v.X, 2) + Math.pow(this.Y - v.Y, 2));
+        }
         
     });
     

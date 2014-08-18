@@ -60,15 +60,14 @@ define(function(require) {
 
 			Source.Load(Path, function() {
 				//Draw source on canvas
-				var canvas = document.createElement('canvas');
-				canvas.width = Source.Width;
-				canvas.height = Source.Height;
-				var context = canvas.getContext("2d");
-				context.drawImage(Source.Data, 0, 0);
+
 				
 				//Add subresources to list
 				Content.forEach(function(Resource){
-					this.Resources[Resource.Name] = context.getImageData(Resource.X, Resource.Y, Resource.Width, Resource.Height);
+                    
+					this.Resources[Resource.Name] = new Bitmap(Resource.Width, Resource.Height, Resource.X, Resource.Y, Source.Width, Source.Height);
+                    this.Resources[Resource.Name].Data = Source.Data;
+
 				}.bind(this));
 				
 				//Callback
@@ -84,7 +83,7 @@ define(function(require) {
 		},
 		
 		onLoaded: function() {
-			
+
 		}
         
     });

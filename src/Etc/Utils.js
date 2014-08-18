@@ -42,7 +42,7 @@ State = {
 
 };
 
-Align = {
+Direction = {
 	Top: 0,
 	Bottom: 1,
 	Right: 2,

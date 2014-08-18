@@ -2,8 +2,6 @@ define( function() {
 
     
     var Entity = Class.extend({
-        
-		Name: "unnamed",
 		
 		initialize: function() {
 
@@ -11,6 +9,10 @@ define( function() {
 			this.State = State.Active;
 		},
 		
+        Load: function(ResourceManager) {
+            
+        },
+        
 		addComponent: function(NewComponent) {
 			
 			

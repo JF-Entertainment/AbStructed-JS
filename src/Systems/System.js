@@ -3,13 +3,17 @@ define( function() {
     
     var System = Class.extend({
         
-		initialize: function() {
-			this.Environment = null;
+		initialize: function(Environment) {
+			this.Environment = Environment;
 		},
-		
+        
 		Load: function() {
 			
-		}
+		},
+        
+        Tick: function(elapsed) {
+            
+        }
 
         
     });

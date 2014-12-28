@@ -1,3 +1,8 @@
+````
+Notice:
+This is an older version of the AbStructed engine, without Typescript.
+```
+
 AbStructed
 =========
 
